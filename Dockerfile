@@ -16,6 +16,9 @@ RUN mkdir -p /usr/local/bin && \
 
 WORKDIR /
 
+RUN yum module enable -y container-tools:1.0 && \
+    yum module install -y container-tools:1.0
+
 RUN groupadd -g 1001 go && \
     useradd -m -u 1001 -g go go
 
